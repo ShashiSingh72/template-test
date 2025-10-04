@@ -1,0 +1,12 @@
+   jobs: 
+   - job: terraform_init
+     steps:
+      - task: TerraformTask@5
+        inputs:
+          provider: 'azurerm'
+          command: 'init'
+          backendServiceArm: 'kashi-dev-app'
+          backendAzureRmResourceGroupName: 'shashi_rg'
+          backendAzureRmStorageAccountName: 'shashistg01'
+          backendAzureRmContainerName: 'shashicontainer'
+          backendAzureRmKey: 'terraform.tfstate'
